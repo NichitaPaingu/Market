@@ -1,31 +1,89 @@
-# MyProject
+# Market Project
 
-Welcome to MyProject! This project is a marketplace where users can view products, add them to their carts, leave reviews, and manage their favorites. Administrators have additional functionalities to manage products.
+This is a Laravel-based market project. It includes functionalities for product management, user authentication, shopping cart, favorites, reviews, and more.
 
-## Features
+## Getting Started
 
-- User Authentication (Registration, Login, Logout)
-- Product Management (CRUD operations for admins)
-- Add to Cart and Checkout functionality
-- Add to Favorites functionality
-- Leave and Manage Reviews for products
-- Responsive design with carousels for product images and reviews
-
-## Installation
-
-To get a local copy up and running, follow these steps.
+Follow these instructions to get a copy of the project up and running on your local machine.
 
 ### Prerequisites
 
-- PHP >= 7.3
+- PHP 7.4 or higher
 - Composer
-- Laravel
-- MySQL
+- Node.js and npm
+- MySQL or any other compatible database
 
-### Setup
+### Installation
 
-1. **Clone the repository:**
+1. Clone the repository:
 
-```bash
-git clone https://github.com/yourusername/myproject.git
-cd myproject
+    ```bash
+    git clone https://github.com/NichitaPaingu/Market.git
+    cd Market
+    ```
+
+2. Install PHP dependencies:
+
+    ```bash
+    composer install
+    ```
+
+3. Install JavaScript dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Copy the example environment file and configure your environment variables:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Open `.env` and set your database connection details and other environment settings.
+
+5. Generate an application key:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+6. Import the database:
+
+    The project includes a `myproject.sql` file with pre-populated data. Import this file into your database to have all products visible.
+
+    ```bash
+    mysql -u your_username -p your_database < myproject.sql
+    ```
+
+    Replace `your_username` with your MySQL username, and `your_database` with the name of your database.
+
+7. Run migrations the database:
+
+    ```bash
+    php artisan migrate 
+    ```
+
+### Running the Application
+
+1. Compile the assets:
+
+    ```bash
+    npm run dev
+    ```
+
+2. Serve the application:
+
+    ```bash
+    php artisan serve
+    ```
+
+    The application will be available at `http://localhost:8000`.
+
+### Admin Account
+
+You can log in as an administrator using the following credentials:
+
+- **Email:** `test@example.com`
+- **Password:** `123456789`
+
